@@ -753,6 +753,243 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
+/* ══════════════════════════════════════════
+   MOBILE RESPONSIVE — 태블릿 & 스마트폰
+   ══════════════════════════════════════════ */
+
+/* ── 태블릿 (768px 이하) ── */
+@media screen and (max-width: 768px) {
+  body { font-size: 14px; }
+
+  .page { max-width: 100%; border-radius: 0; box-shadow: none; }
+
+  /* COVER */
+  .cover { padding: 2.5rem 1.5rem 2rem; }
+  .cover-title { font-size: 24px; }
+  .cover-sub { font-size: 13px; margin-bottom: 1.5rem; }
+  .cover-meta { grid-template-columns: repeat(2, 1fr); }
+  .cover-meta-value { font-size: 14px; }
+
+  /* TOC */
+  .toc { padding: 1.5rem 1.5rem; }
+  .toc-grid { grid-template-columns: 1fr; gap: .25rem; }
+
+  /* BODY */
+  .body { padding: 1.5rem 1.25rem; }
+
+  /* STAT CARDS — 5열 → 3열 */
+  .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .stat-label { font-size: 10px; line-height: 1.3; }
+  .stat-value { font-size: 18px; }
+
+  /* COMPARE — 3열 → 3열 유지, 패딩 축소 */
+  .compare-grid { gap: 8px; }
+  .compare-card { padding: .7rem .6rem; }
+  .compare-value { font-size: 16px; }
+
+  /* DIFFICULTY BAR */
+  .diff-bar-label { min-width: 70px; font-size: 11px; }
+
+  /* TABLES — 가로 스크롤 래퍼 */
+  .data-table, .full-db-table, .vocab-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .data-table th, .data-table td,
+  .full-db-table th, .full-db-table td {
+    white-space: nowrap;
+    padding: .45rem .55rem;
+  }
+  .vocab-table th, .vocab-table td {
+    white-space: normal;
+    min-width: 80px;
+  }
+  .vocab-table td:first-child { min-width: 100px; }
+  .vocab-table td:nth-child(2) { min-width: 60px; }
+
+  /* ITEM CARDS — 2열 → 1열 */
+  .item-grid { grid-template-columns: 1fr; gap: 12px; }
+  .item-card-head { flex-wrap: wrap; }
+  .item-num { font-size: 18px; }
+  .item-rate { font-size: 20px; }
+
+  /* TREND */
+  .trend-section { grid-template-columns: 1fr; }
+
+  /* STRATEGY */
+  .strategy-grid { grid-template-columns: 1fr; }
+
+  /* ROADMAP — 4열 → 2x2 */
+  .roadmap { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .roadmap-step:not(:last-child)::after { display: none; }
+
+  /* INFO 2COL */
+  .info-2col { grid-template-columns: 1fr; }
+
+  /* CHART */
+  .chart-row { grid-template-columns: 1fr; }
+  .chart-wrap { height: 240px; }
+
+  /* FOOTER */
+  .footer {
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+    padding: 1rem 1.5rem;
+  }
+
+  /* SCROLL TOP */
+  .scroll-top { bottom: 20px; right: 16px; width: 40px; height: 40px; font-size: 16px; }
+
+  /* SECTION */
+  .section-title { font-size: 16px; }
+}
+
+/* ── 스마트폰 (480px 이하) ── */
+@media screen and (max-width: 480px) {
+  body { font-size: 14px; line-height: 1.8; }
+
+  /* COVER */
+  .cover { padding: 2rem 1.1rem 1.5rem; }
+  .cover-title { font-size: 20px; line-height: 1.4; }
+  .cover-sub { font-size: 12px; }
+  .cover-badge { font-size: 10px; padding: 3px 8px; }
+  .cover-meta { grid-template-columns: 1fr 1fr; gap: 1px; }
+  .cover-meta-item { padding: .65rem .5rem; }
+  .cover-meta-label { font-size: 9px; }
+  .cover-meta-value { font-size: 13px; }
+
+  /* TOC */
+  .toc { padding: 1.2rem 1.1rem; }
+  .toc-item { font-size: 12px; }
+
+  /* BODY */
+  .body { padding: 1.2rem 1rem; }
+
+  /* SECTION */
+  .section-header { gap: .5rem; }
+  .section-num { width: 24px; height: 24px; font-size: 11px; }
+  .section-title { font-size: 15px; }
+
+  /* STAT CARDS — 3열 → 2열 */
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .stat-card { padding: .7rem .5rem; border-radius: 10px; }
+  .stat-label { font-size: 9.5px; line-height: 1.3; word-break: keep-all; }
+  .stat-value { font-size: 20px; }
+  .stat-sub { font-size: 9px; }
+
+  /* COMPARE — 3열 → 1열 세로 */
+  .compare-grid { grid-template-columns: 1fr; gap: 6px; }
+  .compare-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem .9rem;
+    text-align: left;
+  }
+  .compare-label { margin-bottom: 0; font-size: 11px; }
+  .compare-value { font-size: 16px; }
+  .compare-note { margin-top: 0; margin-left: .5rem; }
+
+  /* VERDICT */
+  .verdict { padding: .9rem 1rem; font-size: 12.5px; line-height: 1.8; border-radius: 0 10px 10px 0; }
+
+  /* DIFFICULTY BAR */
+  .diff-bar-row { gap: .4rem; }
+  .diff-bar-label { min-width: 58px; font-size: 10.5px; }
+  .diff-bar-wrap { height: 20px; }
+  .diff-bar-fill { height: 20px; font-size: 10px; }
+  .diff-pct { font-size: 11px; min-width: 32px; }
+
+  /* TABLES — 폰 최적화 */
+  .data-table { font-size: 11px; }
+  .data-table th { font-size: 10px; padding: .4rem .4rem; }
+  .data-table td { padding: .4rem .4rem; }
+  .full-db-table { font-size: 10px; }
+  .full-db-table th { font-size: 9px; }
+
+  .vocab-table { font-size: 11px; }
+  .vocab-table th { font-size: 10px; padding: .4rem .5rem; }
+  .vocab-table td { padding: .4rem .5rem; font-size: 11px; }
+  .vocab-word { font-size: 12px; }
+
+  /* ITEM CARDS */
+  .item-card-head {
+    padding: .6rem .8rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .item-card-head-left {
+    flex: 1;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+  .item-type { font-size: 10px; word-break: keep-all; }
+  .item-card-body { padding: .7rem .8rem; }
+  .item-topic { font-size: 12px; }
+  .item-desc { font-size: 11.5px; }
+
+  /* CHOICE BARS */
+  .choice-bar-wrap { height: 18px; }
+  .choice-bar-inner { height: 18px; font-size: 9px; }
+  .choice-pct { font-size: 10px; min-width: 30px; }
+
+  /* POINT BOX */
+  .point-box { padding: .5rem .7rem; font-size: 11.5px; }
+
+  /* TREND */
+  .trend-card { padding: .7rem .8rem; }
+  .trend-card-title { font-size: 11.5px; }
+  .tag { font-size: 10px; padding: 2px 7px; }
+
+  /* STRATEGY */
+  .strategy-card { padding: .8rem .9rem; }
+  .strategy-title { font-size: 12.5px; }
+  .strategy-desc { font-size: 11.5px; }
+  .strategy-tip { font-size: 10.5px; }
+
+  /* ROADMAP — 2x2 유지 */
+  .roadmap { gap: 6px; }
+  .roadmap-step { padding: .7rem .5rem; }
+  .roadmap-week { font-size: 9px; }
+  .roadmap-main { font-size: 11.5px; }
+  .roadmap-sub { font-size: 9px; }
+
+  /* CHECKLIST */
+  .checklist li { font-size: 12px; gap: .5rem; padding: .45rem 0; }
+  .check-box { width: 18px; height: 18px; }
+
+  /* NOTICE */
+  .notice { padding: .7rem .9rem; font-size: 11.5px; }
+
+  /* INFO */
+  .info-box { padding: .7rem .8rem; }
+  .info-box-title { font-size: 10.5px; }
+  .info-row { font-size: 11.5px; }
+
+  /* SUBSECTION */
+  .subsec-title { font-size: 12.5px; }
+
+  /* FOOTER */
+  .footer { padding: .9rem 1.1rem; border-radius: 0; }
+  .footer-brand { font-size: 12px; }
+  .footer-info { font-size: 10px; }
+
+  /* BADGES */
+  .qnum { font-size: 10px; padding: 1px 6px; }
+  .badge { font-size: 9px; padding: 2px 6px; }
+
+  /* HIGHLIGHT */
+  .hl-red, .hl-blue, .hl-amber { font-size: inherit; }
+
+  /* CHART */
+  .chart-wrap { height: 200px; }
+}
+
+
 /* PRINT — A4 인쇄 최적화 */
 @page {
   size: A4;
